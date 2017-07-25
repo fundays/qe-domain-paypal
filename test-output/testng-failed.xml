@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" guice-stage="DEVELOPMENT" name="Failed suite [paypal]" parallel="methods">
+  <listeners>
+    <listener class-name="com.sandbox.custom.CustomListener"/>
+  </listeners>
+  <test name="paypal(failed)" parallel="methods">
+    <groups>
+      <run>
+        <include name="ui"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.sandbox.testplans.TransferMoneyTestPlan">
+        <methods>
+          <include name="testInputBox"/>
+          <include name="testActivateNextBtn"/>
+        </methods>
+      </class> <!-- com.sandbox.testplans.TransferMoneyTestPlan -->
+      <class name="com.sandbox.testplans.UserLogonTestPlan">
+        <methods>
+          <include name="testInputBoxPassword"/>
+          <include name="testInputBoxUser"/>
+          <include name="testUserLogon"/>
+        </methods>
+      </class> <!-- com.sandbox.testplans.UserLogonTestPlan -->
+    </classes>
+  </test> <!-- paypal(failed) -->
+</suite> <!-- Failed suite [paypal] -->
