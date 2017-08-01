@@ -2,9 +2,16 @@ package com.sandbox.testplans;
 
 import com.sandbox.custom.CommonTestLocators;
 import com.sandbox.testpages.HomeTestPage;
-import com.sandbox.testpages.TransferMoneyTestPage;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class HomePageTestPlan extends CommonTestLocators {
@@ -21,9 +28,37 @@ public class HomePageTestPlan extends CommonTestLocators {
         return new Object[][]{{"This is a test", "for data object provider"}};
     }
 
+
     @Test(dataProvider = "provider")
     public void print(String phrase, String target) {
         System.out.print(phrase + " " + target);
+    }
+
+//    @Test(groups = {"ui", "qe", "regression"}, priority = 7)
+//    public void testJs() {
+//        // Check the GreetingMesg Element Text should match "Hi, ${USERNAME}!"
+//        JavascriptExecutor js = (JavascriptExecutor) homeTestPage.driver;
+//        String jsx = "alert(\"Hello World!\");";
+//        js.executeAsyncScript(jsx);
+//        Assert.assertTrue(true);
+//    }
+
+    @Test
+    public void list(){
+        String[] arr=new String[5];
+        arr[0]="x";
+        List<String> arraList=new ArrayList<String>();
+        arraList.add("a");
+        arraList.add("b");
+        Map<String, Object> map = new HashMap<String, Object>(){
+            {
+                put("key1", "value1");
+                put("key2", "value2");
+                put("key3", "value3");
+            }
+        };
+        map.get("key1");
+
     }
 
     @Test(groups = {"ui", "qe", "regression"}, priority = 6)
