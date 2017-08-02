@@ -5,6 +5,7 @@ This includes packages like “custom - provide common locators and utils”， 
 - Common Test Locators: including id/name/xpath and etc for webElements
 - Common Utils Test Page: new Firefox webDriver, define common methods like accessPage(), isElementPresent() as platform utils
 - Custom listener: override listeners with customized log printing 
+- JavaCSV：read CSV and parse out cell data
 
 ## com.sandbox.testpages: define Strings/Methods to support testplans for the page
 
