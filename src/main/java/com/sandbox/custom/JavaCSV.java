@@ -11,14 +11,25 @@ public class JavaCSV {
     /**
      * Read CSV
      */
+
+    public static String csvFilePath = "src/test/resources/testFile.csv";
     public static void main(String[] args) throws Exception {
-        ArrayList<String[]> arr = readeCsv();
+        ArrayList<String[]> arr = readeCsv(csvFilePath);
         System.out.println(arr.get(0)[0]);
     }
 
-    public static ArrayList<String[]> readeCsv() throws Exception {
+    public ArrayList<String[]> readCSV(String csvFilePath) throws Exception{
+        ArrayList<String[]> csvList=new ArrayList<>();
+        CsvReader reader=new CsvReader(csvFilePath,',',Charset.forName("SJIS"));
+        reader.readHeaders();
+        while (reader.readRecord()){
+            csvList.add(reader.getValues());
+        }
+        reader.close();
+        return csvList;
+    }
+    public static ArrayList<String[]> readeCsv(String csvFilePath) throws Exception {
         ArrayList<String[]> csvList = new ArrayList<String[]>();
-        String csvFilePath = "src/test/resources/testFile.csv";
         CsvReader reader = new CsvReader(csvFilePath, ',', Charset.forName("SJIS"));
         reader.readHeaders(); // ignore Headers
 
@@ -26,14 +37,14 @@ public class JavaCSV {
             csvList.add(reader.getValues());
         }
         reader.close();
-
-        for (int row = 0; row < csvList.size(); row++) {
-
-            String cell = csvList.get(row)[0]; //get row / col
-            String col = csvList.get(row)[1];
-            System.out.println(cell + " " + col);
-
-        }
+//        // Retrieve data
+//        for (int row = 0; row < csvList.size(); row++) {
+//
+//            String cell = csvList.get(row)[0]; //get row / col
+//            String col = csvList.get(row)[1];
+//            System.out.println(cell + " " + col);
+//
+//        }
         return csvList;
 
     }

@@ -1,3 +1,4 @@
-testObj,cityCode
-rest1,3302
-rest2,3303
+ProjectName,TestCaseID,UserName,Password
+Payment,TC1,ejia_payer@outlook.com,enter.123
+Payment,TC2,ejia_buyer@outlook.com,enter.123
+Payment,TC3,ejia_buyer01@outlook.com,enter.123

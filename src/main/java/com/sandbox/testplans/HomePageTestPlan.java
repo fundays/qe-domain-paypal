@@ -1,6 +1,8 @@
 package com.sandbox.testplans;
 
 import com.sandbox.custom.CommonTestLocators;
+import com.sandbox.custom.JavaCSV;
+import com.sandbox.testdatas.HomeTestReadData;
 import com.sandbox.testpages.HomeTestPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -8,10 +10,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class HomePageTestPlan extends CommonTestLocators {
@@ -20,18 +19,32 @@ public class HomePageTestPlan extends CommonTestLocators {
     @BeforeTest
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "C:/Program Files (x86)/Mozilla Firefox/geckodriver.exe");
-        homeTestPage = new HomeTestPage();
+//        homeTestPage = new HomeTestPage();
     }
 
-    @DataProvider(name = "provider")
-    public Object[][] provideData() {
-        return new Object[][]{{"This is a test", "for data object provider"}};
+    @DataProvider(name = "ReadData")
+    public Iterator<Object[]> caseData() throws Exception {
+        JavaCSV csvReader = new JavaCSV();
+        ArrayList<String[]> readLines = csvReader.readCSV("src/test/resources/HomeTestPageData.csv");
+        List<Object> items = new ArrayList<Object>();
+        for (int row = 0; row < readLines.size(); row++) {
+            HomeTestReadData testdata = new HomeTestReadData();
+            testdata.setProjectName(readLines.get(row)[0]);
+            testdata.setTestCaseId(readLines.get(row)[1]);
+            testdata.setUsername(readLines.get(row)[2]);
+            testdata.setPassword(readLines.get(row)[3]);
+            items.add(testdata);
+        }
+        List<Object[]> homePageTestData = new ArrayList<Object[]>();
+        for (Object item : items) {
+            homePageTestData.add(new Object[]{item});
+        }
+        return homePageTestData.iterator();
     }
 
-
-    @Test(dataProvider = "provider")
-    public void print(String phrase, String target) {
-        System.out.print(phrase + " " + target);
+    @Test(dataProvider = "ReadData")
+    public void print(HomeTestReadData data) {
+        System.out.print("ProjectName: " + data.getProjectName() + "\nCaseId: " + data.getTestCaseId() + "\nUserName: " + data.getUsername() + "\nPassword: " + data.getPassword());
     }
 
 //    @Test(groups = {"ui", "qe", "regression"}, priority = 7)
@@ -42,24 +55,6 @@ public class HomePageTestPlan extends CommonTestLocators {
 //        js.executeAsyncScript(jsx);
 //        Assert.assertTrue(true);
 //    }
-
-    @Test
-    public void list(){
-        String[] arr=new String[5];
-        arr[0]="x";
-        List<String> arraList=new ArrayList<String>();
-        arraList.add("a");
-        arraList.add("b");
-        Map<String, Object> map = new HashMap<String, Object>(){
-            {
-                put("key1", "value1");
-                put("key2", "value2");
-                put("key3", "value3");
-            }
-        };
-        map.get("key1");
-
-    }
 
     @Test(groups = {"ui", "qe", "regression"}, priority = 6)
     public void testGreetingMsg() {
@@ -105,8 +100,8 @@ public class HomePageTestPlan extends CommonTestLocators {
     }
 
     @AfterTest
-    public void clean(){
-        homeTestPage.driver.close();
+    public void clean() {
+//        homeTestPage.driver.close();
         System.out.print("driver.close");
     }
 }

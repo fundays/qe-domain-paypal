@@ -18,6 +18,8 @@ public class HomeTestPage extends CommonUtilsTestPage {
     public String Completed_Transactions = "div[id^=txnDescription]>span[class^=transactionD]";
     public String net_amt_list = ".netAmount.vx_h4";
     public String positive_amt_list = ".isPositive.vx_h4";
+    public String repeat_transactions="";
+
 
     @Override
     // Override to print log for page url
