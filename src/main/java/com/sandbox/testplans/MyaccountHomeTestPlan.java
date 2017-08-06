@@ -121,7 +121,7 @@ public class MyaccountHomeTestPlan extends CommonLocators {
 
     @AfterTest
     public void clean() {
-//        testPage.driver.close();
+        testPage.driver.close();
     }
 }
 

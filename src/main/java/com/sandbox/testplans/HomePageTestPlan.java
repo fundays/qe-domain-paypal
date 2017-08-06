@@ -18,14 +18,15 @@ public class HomePageTestPlan extends CommonLocators {
         testPage = new HomeTestPage();
     }
 
-    @Test(priority = 0)
+    @Test
     public void launchHome(){
         testPage.launchHome();
         String currentURL=testPage.driver.getCurrentUrl();
         Assert.assertEquals(currentURL,"https://www.sandbox.paypal.com/us/home");
+        System.out.println("Launch Home success");
     }
 
-    @Test(dependsOnMethods = "launchHome",priority = 1)
+    @Test
     public void homePageWebElementExist(){
     Assert.assertTrue(testPage.isElementPresent(By.cssSelector(testPage.login)));
     Assert.assertTrue(testPage.isElementPresent(By.cssSelector(testPage.signUp)));
@@ -33,7 +34,7 @@ public class HomePageTestPlan extends CommonLocators {
     Assert.assertEquals(center_block_test,"Global Purchase Protection.\nMusic to Your Ears.");
     }
 
-    @Test(dependsOnMethods = "launchHome",priority = 2)
+    @Test
     public void switchToSignInPage(){
         // click LoginIntoYourAccount,  switch to signin Page
         testPage.driver.findElement(By.cssSelector(testPage.login)).click();
@@ -42,7 +43,7 @@ public class HomePageTestPlan extends CommonLocators {
         Assert.assertEquals(currentTitle,"Log in to your PayPal account");
     }
 
-    @Test(dependsOnMethods = "switchToSignInPage")
+    @Test
     public void signInPageWebElementExist() {
         Assert.assertTrue(testPage.isElementPresent(By.id(input_user)));
         Assert.assertTrue(testPage.isElementPresent(By.id(input_pwd)));

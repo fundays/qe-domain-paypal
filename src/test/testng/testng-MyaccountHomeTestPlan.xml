@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="paypal">
+<suite name="paypal" preserve-order="true">
     <listeners>
         <listener class-name="com.sandbox.custom.CustomListener"/>
     </listeners>
-    <test name="paypal" verbose="2" preserve-order="true">
+    <test name="paypal" verbose="2" >
         <classes>
             <class name="com.sandbox.testplans.MyaccountHomeTestPlan">
-                <methods>
-                    <!--<include name="testInputBoxUser"/>-->
-                    <!--<include name="testInputBoxPassword"/>-->
-                </methods>
             </class>
         </classes>
     </test>

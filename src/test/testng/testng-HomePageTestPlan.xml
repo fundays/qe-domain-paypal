@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="paypal" parallel="methods" thread-count="2">
+<suite name="paypal" parallel="methods" thread-count="2" preserve-order="true">
     <groups>
         <run>
             <!--<include name="UI"/>-->
@@ -10,9 +10,16 @@
     <listeners>
         <listener class-name="com.sandbox.custom.CustomListener"/>
     </listeners>
-    <test name="paypal" verbose="2" preserve-order="true">
+    <test name="paypal" verbose="2">
         <classes>
-            <class name="com.sandbox.testplans.HomePageTestPlan"/>
+            <class name="com.sandbox.testplans.HomePageTestPlan">
+                <methods>
+                    <include name="launchHome"/>
+                    <include name="homePageWebElementExist"/>
+                    <include name="switchToSignInPage"/>
+                    <include name="signInPageWebElementExist"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
