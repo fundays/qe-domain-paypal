@@ -11,10 +11,10 @@
         <method signature="PayPalBalanceTestPlan.testLnkDisplayWithdrawMoney()[pri:0, instance:com.sandbox.testplans.PayPalBalanceTestPlan@13c78c0b]" name="testLnkDisplayWithdrawMoney" class="com.sandbox.testplans.PayPalBalanceTestPlan"/>
         <method signature="TransferMoneyTestPlan.testInputBox()[pri:0, instance:com.sandbox.testplans.TransferMoneyTestPlan@3dd3bcd]" name="testInputBox" class="com.sandbox.testplans.TransferMoneyTestPlan"/>
         <method signature="TransferMoneyTestPlan.testActivateNextBtn()[pri:0, instance:com.sandbox.testplans.TransferMoneyTestPlan@3dd3bcd]" name="testActivateNextBtn" class="com.sandbox.testplans.TransferMoneyTestPlan"/>
-        <method signature="UserLogonTestPlan.testInputBoxPassword()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxPassword" class="com.sandbox.testplans.UserLogonTestPlan"/>
-        <method signature="UserLogonTestPlan.testInputBoxUser()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxUser" class="com.sandbox.testplans.UserLogonTestPlan"/>
-        <method signature="UserLogonTestPlan.testMock()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testMock" class="com.sandbox.testplans.UserLogonTestPlan"/>
-        <method signature="UserLogonTestPlan.testUserLogon()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testUserLogon" class="com.sandbox.testplans.UserLogonTestPlan"/>
+        <method signature="UserLogonTestPlan.testInputBoxPassword()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxPassword" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
+        <method signature="UserLogonTestPlan.testInputBoxUser()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxUser" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
+        <method signature="UserLogonTestPlan.testMock()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testMock" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
+        <method signature="UserLogonTestPlan.testUserLogon()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testUserLogon" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
         <method signature="HomePageTestPlan.testElementDisplayPayOrSendMoney()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testElementDisplayPayOrSendMoney" class="com.sandbox.testplans.HomePageTestPlan"/>
         <method signature="HomePageTestPlan.testElementGetThePaypalApp()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testElementGetThePaypalApp" class="com.sandbox.testplans.HomePageTestPlan"/>
         <method signature="HomePageTestPlan.testElementTakeMoreTimeToPay()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testElementTakeMoreTimeToPay" class="com.sandbox.testplans.HomePageTestPlan"/>
@@ -39,16 +39,16 @@
         <method signature="HomePageTestPlan.testSellingTools()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testSellingTools" class="com.sandbox.testplans.HomePageTestPlan"/>
       </group> <!-- qe -->
       <group name="func">
-        <method signature="UserLogonTestPlan.testInputBoxPassword()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxPassword" class="com.sandbox.testplans.UserLogonTestPlan"/>
-        <method signature="UserLogonTestPlan.testInputBoxUser()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxUser" class="com.sandbox.testplans.UserLogonTestPlan"/>
-        <method signature="UserLogonTestPlan.testMock()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testMock" class="com.sandbox.testplans.UserLogonTestPlan"/>
+        <method signature="UserLogonTestPlan.testInputBoxPassword()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxPassword" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
+        <method signature="UserLogonTestPlan.testInputBoxUser()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxUser" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
+        <method signature="UserLogonTestPlan.testMock()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testMock" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
       </group> <!-- func -->
       <group name="regression">
         <method signature="PayPalBalanceTestPlan.testAccesstoPaypalBalanceFromHomePage()[pri:0, instance:com.sandbox.testplans.PayPalBalanceTestPlan@13c78c0b]" name="testAccesstoPaypalBalanceFromHomePage" class="com.sandbox.testplans.PayPalBalanceTestPlan"/>
         <method signature="PayPalBalanceTestPlan.testLnkDisplayAddMoney()[pri:0, instance:com.sandbox.testplans.PayPalBalanceTestPlan@13c78c0b]" name="testLnkDisplayAddMoney" class="com.sandbox.testplans.PayPalBalanceTestPlan"/>
         <method signature="PayPalBalanceTestPlan.testLnkDisplayManageCurrencies()[pri:0, instance:com.sandbox.testplans.PayPalBalanceTestPlan@13c78c0b]" name="testLnkDisplayManageCurrencies" class="com.sandbox.testplans.PayPalBalanceTestPlan"/>
         <method signature="PayPalBalanceTestPlan.testLnkDisplayWithdrawMoney()[pri:0, instance:com.sandbox.testplans.PayPalBalanceTestPlan@13c78c0b]" name="testLnkDisplayWithdrawMoney" class="com.sandbox.testplans.PayPalBalanceTestPlan"/>
-        <method signature="UserLogonTestPlan.testUserLogon()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testUserLogon" class="com.sandbox.testplans.UserLogonTestPlan"/>
+        <method signature="UserLogonTestPlan.testUserLogon()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testUserLogon" class="com.sandbox.testplans.MyaccountHomeTestPlan"/>
         <method signature="HomePageTestPlan.testElementDisplayPayOrSendMoney()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testElementDisplayPayOrSendMoney" class="com.sandbox.testplans.HomePageTestPlan"/>
         <method signature="HomePageTestPlan.testElementGetThePaypalApp()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testElementGetThePaypalApp" class="com.sandbox.testplans.HomePageTestPlan"/>
         <method signature="HomePageTestPlan.testElementTakeMoreTimeToPay()[pri:0, instance:com.sandbox.testplans.HomePageTestPlan@61dc03ce]" name="testElementTakeMoreTimeToPay" class="com.sandbox.testplans.HomePageTestPlan"/>
@@ -152,12 +152,12 @@
           </reporter-output>
         </test-method> <!-- testLnkDisplayManageCurrencies -->
       </class> <!-- com.sandbox.testplans.PayPalBalanceTestPlan -->
-      <class name="com.sandbox.testplans.UserLogonTestPlan">
+      <class name="com.sandbox.testplans.MyaccountHomeTestPlan">
         <test-method status="FAIL" signature="testInputBoxPassword()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxPassword" duration-ms="31" started-at="2017-07-24T14:36:23Z" finished-at="2017-07-24T14:36:23Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.sandbox.testplans.UserLogonTestPlan.testInputBoxPassword(UserLogonTestPlan.java:36)
+                <![CDATA[java.lang.NullPointerException
+	at com.sandbox.testplans.MyaccountHomeTestPlan.testInputBoxPassword(UserLogonTestPlan.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -180,8 +180,8 @@
         <test-method status="FAIL" signature="testInputBoxUser()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testInputBoxUser" duration-ms="16" started-at="2017-07-24T14:36:23Z" finished-at="2017-07-24T14:36:23Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.sandbox.testplans.UserLogonTestPlan.testInputBoxUser(UserLogonTestPlan.java:30)
+                <![CDATA[java.lang.NullPointerException
+	at com.sandbox.testplans.MyaccountHomeTestPlan.testInputBoxUser(UserLogonTestPlan.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -204,8 +204,8 @@
         <test-method status="FAIL" signature="testUserLogon()[pri:0, instance:com.sandbox.testplans.UserLogonTestPlan@26f67b76]" name="testUserLogon" duration-ms="14" started-at="2017-07-24T14:36:23Z" finished-at="2017-07-24T14:36:23Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.sandbox.testplans.UserLogonTestPlan.testUserLogon(UserLogonTestPlan.java:46)
+                <![CDATA[java.lang.NullPointerException
+	at com.sandbox.testplans.MyaccountHomeTestPlan.testUserLogon(UserLogonTestPlan.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -229,7 +229,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMock -->
-      </class> <!-- com.sandbox.testplans.UserLogonTestPlan -->
+      </class> <com.sandbox.testplans.MyaccountHomeTestPlanPlanPlan -->
     </test> <!-- paypal -->
   </suite> <!-- paypal -->
 </testng-results>

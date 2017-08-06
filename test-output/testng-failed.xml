@@ -17,13 +17,13 @@
           <include name="testActivateNextBtn"/>
         </methods>
       </class> <!-- com.sandbox.testplans.TransferMoneyTestPlan -->
-      <class name="com.sandbox.testplans.UserLogonTestPlan">
+      <class name="com.sandbox.testplans.MyaccountHomeTestPlan">
         <methods>
           <include name="testInputBoxPassword"/>
           <include name="testInputBoxUser"/>
           <include name="testUserLogon"/>
         </methods>
-      </class> <!-- com.sandbox.testplans.UserLogonTestPlan -->
+      </class> <com.sandbox.testplans.MyaccountHomeTestPlanPlanPlan -->
     </classes>
   </test> <!-- paypal(failed) -->
 </suite> <!-- Failed suite [paypal] -->

@@ -1,107 +1,56 @@
 package com.sandbox.testplans;
 
-import com.sandbox.custom.CommonTestLocators;
-import com.sandbox.custom.JavaCSV;
-import com.sandbox.testdatas.HomeTestReadData;
+import com.sandbox.custom.CommonLocators;
 import com.sandbox.testpages.HomeTestPage;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.*;
 
-
-public class HomePageTestPlan extends CommonTestLocators {
-    public HomeTestPage homeTestPage;
+public class HomePageTestPlan extends CommonLocators {
+    public HomeTestPage testPage;
 
     @BeforeTest
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "C:/Program Files (x86)/Mozilla Firefox/geckodriver.exe");
-//        homeTestPage = new HomeTestPage();
+        testPage = new HomeTestPage();
     }
 
-    @DataProvider(name = "ReadData")
-    public Iterator<Object[]> caseData() throws Exception {
-        JavaCSV csvReader = new JavaCSV();
-        ArrayList<String[]> readLines = csvReader.readCSV("src/test/resources/HomeTestPageData.csv");
-        List<Object> items = new ArrayList<Object>();
-        for (int row = 0; row < readLines.size(); row++) {
-            HomeTestReadData testdata = new HomeTestReadData();
-            testdata.setProjectName(readLines.get(row)[0]);
-            testdata.setTestCaseId(readLines.get(row)[1]);
-            testdata.setUsername(readLines.get(row)[2]);
-            testdata.setPassword(readLines.get(row)[3]);
-            items.add(testdata);
-        }
-        List<Object[]> homePageTestData = new ArrayList<Object[]>();
-        for (Object item : items) {
-            homePageTestData.add(new Object[]{item});
-        }
-        return homePageTestData.iterator();
+    @Test(priority = 0)
+    public void launchHome(){
+        testPage.launchHome();
+        String currentURL=testPage.driver.getCurrentUrl();
+        Assert.assertEquals(currentURL,"https://www.sandbox.paypal.com/us/home");
     }
 
-    @Test(dataProvider = "ReadData")
-    public void print(HomeTestReadData data) {
-        System.out.print("ProjectName: " + data.getProjectName() + "\nCaseId: " + data.getTestCaseId() + "\nUserName: " + data.getUsername() + "\nPassword: " + data.getPassword());
+    @Test(dependsOnMethods = "launchHome",priority = 1)
+    public void homePageWebElementExist(){
+    Assert.assertTrue(testPage.isElementPresent(By.cssSelector(testPage.login)));
+    Assert.assertTrue(testPage.isElementPresent(By.cssSelector(testPage.signUp)));
+    String center_block_test=testPage.driver.findElement(By.cssSelector(testPage.center_block_text)).getText();
+    Assert.assertEquals(center_block_test,"Global Purchase Protection.\nMusic to Your Ears.");
     }
 
-//    @Test(groups = {"ui", "qe", "regression"}, priority = 7)
-//    public void testJs() {
-//        // Check the GreetingMesg Element Text should match "Hi, ${USERNAME}!"
-//        JavascriptExecutor js = (JavascriptExecutor) homeTestPage.driver;
-//        String jsx = "alert(\"Hello World!\");";
-//        js.executeAsyncScript(jsx);
-//        Assert.assertTrue(true);
-//    }
-
-    @Test(groups = {"ui", "qe", "regression"}, priority = 6)
-    public void testGreetingMsg() {
-        // Check the GreetingMesg Element Text should match "Hi, ${USERNAME}!"
-        Assert.assertTrue(true);
+    @Test(dependsOnMethods = "launchHome",priority = 2)
+    public void switchToSignInPage(){
+        // click LoginIntoYourAccount,  switch to signin Page
+        testPage.driver.findElement(By.cssSelector(testPage.login)).click();
+        testPage.implictlyWait(10);
+        String currentTitle=testPage.driver.getTitle();
+        Assert.assertEquals(currentTitle,"Log in to your PayPal account");
     }
 
-    @Test(groups = {"ui", "qe", "regression"}, priority = 0)
-    public void testElementDisplayPayOrSendMoney() {
-        // Check element display - Pay Or Send Money
-        Assert.assertTrue(true);
-    }
-
-    @Test(groups = {"ui", "qe", "regression"}, priority = 3)
-    public void testElementGetThePaypalApp() {
-        // Check element display - Get The Paypal App
-        Assert.assertTrue(true);
-    }
-
-    @Test(groups = {"ui", "qe", "regression"}, priority = 2)
-    public void testElementTakeMoreTimeToPay() {
-        // Check element display - TakeMoreTimeToPay
-        Assert.assertTrue(true);
-    }
-
-    @Test(groups = {"ui", "qe", "regression"}, priority = 4)
-    public void testSectionBankAndCards() {
-        // Check Section display - Bank And Cards
-        Assert.assertTrue(true);
-    }
-
-    @Test(groups = {"ui", "qe", "regression"}, priority = 5)
-    public void testSellingTools() {
-        // Check Section display - Selling Tools
-        Assert.assertTrue(true);
-    }
-
-
-    @Test(groups = {"ui", "qe", "regression"}, priority = 1)
-    public void testMoreAboutYourAccount() {
-        // Check Section display - More about your account
-        Assert.assertTrue(true);
+    @Test(dependsOnMethods = "switchToSignInPage")
+    public void signInPageWebElementExist() {
+        Assert.assertTrue(testPage.isElementPresent(By.id(input_user)));
+        Assert.assertTrue(testPage.isElementPresent(By.id(input_pwd)));
     }
 
     @AfterTest
     public void clean() {
-//        homeTestPage.driver.close();
+        testPage.driver.close();
         System.out.print("driver.close");
     }
 }

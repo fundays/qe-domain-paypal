@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="paypal" parallel="classes" thread-count="5">
+<suite name="paypal" parallel="methods" thread-count="2">
     <groups>
         <run>
-            <include name="ui"/>
+            <!--<include name="UI"/>-->
             <!--<exclude name="regression"/>-->
         </run>
     </groups>
     <listeners>
         <listener class-name="com.sandbox.custom.CustomListener"/>
     </listeners>
-    <test name="paypal" verbose="3" preserve-order="true">
-        <packages>
-            <package name="com.sandbox.testplans"/>
-        </packages>
+    <test name="paypal" verbose="2" preserve-order="true">
+        <classes>
+            <class name="com.sandbox.testplans.HomePageTestPlan"/>
+        </classes>
     </test>
 </suite>

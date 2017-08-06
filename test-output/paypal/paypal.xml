@@ -26,7 +26,7 @@
 ]]>
     </failure>
   </testcase> <!-- testInputBox -->
-  <testcase name="testMock" time="0.001" classname="com.sandbox.testplans.UserLogonTestPlan"/>
+  <testcase name="testMock" time="0.001" classname="com.sandbox.testplans.MyaccountHomeTestPlan"/>
   <testcase name="testGreetingMsg" time="0.018" classname="com.sandbox.testplans.HomePageTestPlan"/>
   <testcase name="testActivateNextBtn" time="0.0" classname="com.sandbox.testplans.TransferMoneyTestPlan">
     <skipped/>
@@ -36,10 +36,10 @@
   <testcase name="testLnkDisplayWithdrawMoney" time="0.0" classname="com.sandbox.testplans.PayPalBalanceTestPlan"/>
   <testcase name="testElementTakeMoreTimeToPay" time="0.025" classname="com.sandbox.testplans.HomePageTestPlan"/>
   <testcase name="testElementDisplayPayOrSendMoney" time="0.022" classname="com.sandbox.testplans.HomePageTestPlan"/>
-  <testcase name="testUserLogon" time="0.014" classname="com.sandbox.testplans.UserLogonTestPlan">
+  <testcase name="testUserLogon" time="0.014" classname="com.sandbox.testplans.MyaccountHomeTestPlan">
     <failure type="java.lang.NullPointerException">
-      <![CDATA[java.lang.NullPointerException
-	at com.sandbox.testplans.UserLogonTestPlan.testUserLogon(UserLogonTestPlan.java:46)
+        <![CDATA[java.lang.NullPointerException
+	at com.sandbox.testplans.MyaccountHomeTestPlan.testUserLogon(UserLogonTestPlan.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -56,10 +56,10 @@
 ]]>
     </failure>
   </testcase> <!-- testUserLogon -->
-  <testcase name="testInputBoxUser" time="0.016" classname="com.sandbox.testplans.UserLogonTestPlan">
+  <testcase name="testInputBoxUser" time="0.016" classname="com.sandbox.testplans.MyaccountHomeTestPlan">
     <failure type="java.lang.NullPointerException">
-      <![CDATA[java.lang.NullPointerException
-	at com.sandbox.testplans.UserLogonTestPlan.testInputBoxUser(UserLogonTestPlan.java:30)
+        <![CDATA[java.lang.NullPointerException
+	at com.sandbox.testplans.MyaccountHomeTestPlan.testInputBoxUser(UserLogonTestPlan.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -76,10 +76,10 @@
 ]]>
     </failure>
   </testcase> <!-- testInputBoxUser -->
-  <testcase name="testInputBoxPassword" time="0.031" classname="com.sandbox.testplans.UserLogonTestPlan">
+  <testcase name="testInputBoxPassword" time="0.031" classname="com.sandbox.testplans.MyaccountHomeTestPlan">
     <failure type="java.lang.NullPointerException">
-      <![CDATA[java.lang.NullPointerException
-	at com.sandbox.testplans.UserLogonTestPlan.testInputBoxPassword(UserLogonTestPlan.java:36)
+        <![CDATA[java.lang.NullPointerException
+	at com.sandbox.testplans.MyaccountHomeTestPlan.testInputBoxPassword(UserLogonTestPlan.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

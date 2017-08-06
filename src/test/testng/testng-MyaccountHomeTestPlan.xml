@@ -6,12 +6,10 @@
     </listeners>
     <test name="paypal" verbose="2" preserve-order="true">
         <classes>
-            <class name="com.sandbox.testplans.UserLogonTestPlan">
+            <class name="com.sandbox.testplans.MyaccountHomeTestPlan">
                 <methods>
-                    <include name="testInputBoxUser"/>
-                    <include name="testInputBoxPassword"/>
-                    <include name="testUserLogon"/>
-                    <include name="testMockTrue"/>
+                    <!--<include name="testInputBoxUser"/>-->
+                    <!--<include name="testInputBoxPassword"/>-->
                 </methods>
             </class>
         </classes>

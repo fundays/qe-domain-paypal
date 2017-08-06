@@ -1,15 +1,16 @@
 package com.sandbox.custom;
 
 
-public class CommonTestLocators {
+public class CommonLocators {
     public static final String Home_URL = "https://www.sandbox.paypal.com/";
+    public static final String signIn_Page="https://www.sandbox.paypal.com/signin";
     public String Myaccount_Page = "https://www.sandbox.paypal.com/myaccount/home";
     public String friend="ejia_buyer@outlook.com";
-    public String Logon_locator_user = "email";
-    public String Logon_locator_pwd = "password";
+    public String input_user = "email";
+    public String input_pwd = "password";
+    public String btn_Logon = "btnLogin";
     public static String user = "ejia_payer@outlook.com";
     public static String password = "enter.123";
-    public String Logon_locator_Login = "btnLogin";
 
     public String locator_Logout = "Log Out";
     public String cls_myt_balance = "vx_h2 enforceLtr";

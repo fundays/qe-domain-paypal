@@ -1,0 +1,4 @@
+DomainName,TestCaseID,City,Code
+DataTest,TC1,Shanghai,001
+DataTest,TC2,Beijing,002
+DataTest,TC3,Taiwan,003

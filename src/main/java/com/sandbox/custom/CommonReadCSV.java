@@ -1,11 +1,10 @@
-package com.sandbox.testdatas;
+package com.sandbox.custom;
 
-public class ReadDataProvider {
-
+public class CommonReadCSV {
     private String projectName;
     private String testCaseId;
-    public String username;
-    public String password;
+    private String username;
+    private String password;
 
     public String getProjectName() {
         return projectName;
@@ -38,6 +37,4 @@ public class ReadDataProvider {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }

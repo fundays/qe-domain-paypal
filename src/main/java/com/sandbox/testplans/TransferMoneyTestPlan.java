@@ -1,53 +1,55 @@
 package com.sandbox.testplans;
 
+import com.sandbox.custom.CommonLocators;
 import com.sandbox.testpages.TransferMoneyTestPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
-import com.sandbox.custom.CommonTestLocators;
 
 
-public class TransferMoneyTestPlan extends CommonTestLocators {
-    public TransferMoneyTestPage transferMoneyTestPage;
+public class TransferMoneyTestPlan extends CommonLocators {
+    public TransferMoneyTestPage testPage;
 
-    @BeforeTest
+/*
+*   Deprecate this testplan as paypal sandbox transfer function was in maintainance
+ */
+
+    //    @BeforeTest
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "C:/Program Files (x86)/Mozilla Firefox/geckodriver.exe");
-        transferMoneyTestPage = new TransferMoneyTestPage();
+        testPage = new TransferMoneyTestPage();
     }
 
-    @Test(groups = {"ui", "qe"})
+    //    @Test(groups = {"ui", "qe"})
     public void testInputBoxExistense() {
-        transferMoneyTestPage.accessTestPage();
-        transferMoneyTestPage.logonWithCredentials();
-        new WebDriverWait(transferMoneyTestPage.driver, 100).until(ExpectedConditions.presenceOfElementLocated(By.id(transferMoneyTestPage.friends)));
-        Assert.assertTrue(transferMoneyTestPage.isElementPresent(By.id(transferMoneyTestPage.friends)));
+        testPage.accessPage(testPage.Transfer_Page);
+        new WebDriverWait(testPage.driver, 100).until(ExpectedConditions.presenceOfElementLocated(By.id(testPage.friends)));
+        Assert.assertTrue(testPage.isElementPresent(By.id(testPage.friends)));
 
     }
 
-    @Test(groups = {"ui", "qe"}, dependsOnMethods = {"testInputBoxExistense"})
+    //    @Test(groups = {"ui", "qe"}, dependsOnMethods = {"testInputBoxExistense"})
     public void testActivateNextBtn() {
-        transferMoneyTestPage.driver.findElement(By.id(transferMoneyTestPage.friends)).sendKeys(friend);
-        transferMoneyTestPage.implictlyWait(10);
-        Assert.assertTrue(transferMoneyTestPage.isElementPresent(By.xpath(transferMoneyTestPage.next)));
-        transferMoneyTestPage.driver.findElement(By.xpath(transferMoneyTestPage.next)).click();
+        testPage.driver.findElement(By.id(testPage.friends)).sendKeys(friend);
+        testPage.implictlyWait(10);
+        Assert.assertTrue(testPage.isElementPresent(By.xpath(testPage.next)));
+        testPage.driver.findElement(By.xpath(testPage.next)).click();
     }
 
-    @Test(groups = {"func", "qe", "regression"}, dependsOnMethods = {"testInputBoxExistense", "testActivateNextBtn"})
+    //    @Test(groups = {"func", "qe", "regression"}, dependsOnMethods = {"testInputBoxExistense", "testActivateNextBtn"})
     public void transferMoneyToFriend() {
-        new WebDriverWait(transferMoneyTestPage.driver, 100).until(ExpectedConditions.presenceOfElementLocated(By.name(transferMoneyTestPage.name_amount)));
-        transferMoneyTestPage.driver.findElement(By.name(transferMoneyTestPage.name_amount)).sendKeys("100");
-        transferMoneyTestPage.driver.findElement(By.className(transferMoneyTestPage.submitAmt)).click();
-        transferMoneyTestPage.implictlyWait(20);
-        transferMoneyTestPage.driver.findElement(By.xpath(transferMoneyTestPage.sendMoneyNow)).click();
-        transferMoneyTestPage.implictlyWait(20);
-        Assert.assertTrue(transferMoneyTestPage.isElementPresent(By.xpath(transferMoneyTestPage.successHeader)));
+        new WebDriverWait(testPage.driver, 100).until(ExpectedConditions.presenceOfElementLocated(By.name(testPage.name_amount)));
+        testPage.driver.findElement(By.name(testPage.name_amount)).sendKeys("100");
+        testPage.driver.findElement(By.className(testPage.submitAmt)).click();
+        testPage.implictlyWait(20);
+        testPage.driver.findElement(By.xpath(testPage.sendMoneyNow)).click();
+        testPage.implictlyWait(20);
+        Assert.assertTrue(testPage.isElementPresent(By.xpath(testPage.successHeader)));
     }
 
-    @AfterTest
+    //    @AfterTest
     public void clean() {
-        transferMoneyTestPage.driver.close();
+        testPage.driver.close();
     }
 }
